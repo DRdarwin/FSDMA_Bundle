@@ -11,4 +11,15 @@ updates:
       interval: "weekly"
   - name: Attest Build Provenance
     uses: actions/attest-build-provenance@v1.4.2
-            
+registries:
+  my-pub-registry:
+    type: pub-repository
+    url: https://example-private-pub-repo.dev/optional-path
+    token: ${{secrets.MY_PUB_TOKEN}}
+  updates:
+  - package-ecosystem: "pub"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    registries:
+      - my-pub-registry
