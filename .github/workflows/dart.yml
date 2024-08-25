@@ -72,11 +72,11 @@ jobs:
     # The package type (jdk, jre, jdk+fx, jre+fx)
     java-package: # optional, default is jdk
     # The architecture of the package (defaults to the action runner's architecture)
-    architecture: # optional
+     architecture: # optional
     # Path to where the compressed JDK is located
     jdkFile: # optional
     # Set this option if you want the action to check for the latest available version that satisfies the version spec
-    check-latest: # optional
+     check-latest: # optional
     # ID of the distributionManagement repository in the pom.xml file. Default is `github`
     server-id: # optional, default is github
     # Environment variable name for the username for authentication to the Apache Maven repository. Default is $GITHUB_ACTOR
@@ -98,52 +98,52 @@ jobs:
     # Workaround to pass job status to post job step. This variable is not intended for manual setting
     job-status: # optional, default is ${{ job.status }}
     # The token used to authenticate when fetching version manifests hosted on github.com, such as for the Microsoft Build of OpenJDK. When running this action on github.com, the default value is sufficient. When running on GHES, you can pass a personal access token for github.com if you are experiencing rate limiting.
-    token: # optional, default is ${{ github.server_url == 'https://github.com' && github.token || '' }}
+     token: # optional, default is ${{ github.server_url == 'https://github.com' && github.token || '' }}
     # Name of Maven Toolchain ID if the default name of "${distribution}_${java-version}" is not wanted. See examples of supported syntax in Advanced Usage file
     mvn-toolchain-id: # optional
     # Name of Maven Toolchain Vendor if the default name of "${distribution}" is not wanted. See examples of supported syntax in Advanced Usage file
     mvn-toolchain-vendor: # optional
           
-    cache: # optional
+     cache: # optional
     # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. Supports wildcards or a list of file names for caching multiple dependencies.
-    cache-dependency-path: # optional
+     cache-dependency-path: # optional
                       - name: Setup Go environment
-  uses: actions/setup-go@v5.0.2
-  with:
+    uses: actions/setup-go@v5.0.2
+    with:
     # The Go version to download (if necessary) and use. Supports semver spec and ranges. Be sure to enclose this option in single quotation marks.
     go-version: # optional
     # Path to the go.mod or go.work file.
     go-version-file: # optional
     # Set this option to true if you want the action to always check for the latest available version that satisfies the version spec
-    check-latest: # optional
+     check-latest: # optional
     # Used to pull Go distributions from go-versions. Since there's a default, this is typically not supplied by the user. When running this action on github.com, the default value is sufficient. When running on GHES, you can pass a personal access token for github.com if you are experiencing rate limiting.
-    token: # optional, default is ${{ github.server_url == 'https://github.com' && github.token || '' }}
+     token: # optional, default is ${{ github.server_url == 'https://github.com' && github.token || '' }}
     # Used to specify whether caching is needed. Set to true, if you'd like to enable caching.
-    cache: # optional, default is true
+     cache: # optional, default is true
     # Used to specify the path to a dependency file - go.sum
-    cache-dependency-path: # optional
+     cache-dependency-path: # optional
     # Target architecture for Go to use. Examples: x86, x64. Will use system architecture by default.
-    architecture: # optional
-                      - name: Setup Go environment
-  uses: actions/setup-go@v5.0.2
-  with:
+     architecture: # optional
+     - name: Setup Go environment
+     uses: actions/setup-go@v5.0.2
+     with:
     # The Go version to download (if necessary) and use. Supports semver spec and ranges. Be sure to enclose this option in single quotation marks.
-    go-version: # optional
+     go-version: # optional
     # Path to the go.mod or go.work file.
-    go-version-file: # optional
+     go-version-file: # optional
     # Set this option to true if you want the action to always check for the latest available version that satisfies the version spec
-    check-latest: # optional
+      check-latest: # optional
     # Used to pull Go distributions from go-versions. Since there's a default, this is typically not supplied by the user. When running this action on github.com, the default value is sufficient. When running on GHES, you can pass a personal access token for github.com if you are experiencing rate limiting.
-    token: # optional, default is ${{ github.server_url == 'https://github.com' && github.token || '' }}
+      token: # optional, default is ${{ github.server_url == 'https://github.com' && github.token || '' }}
     # Used to specify whether caching is needed. Set to true, if you'd like to enable caching.
-    cache: # optional, default is true
+      cache: # optional, default is true
     # Used to specify the path to a dependency file - go.sum
-    cache-dependency-path: # optional
+      cache-dependency-path: # optional
     # Target architecture for Go to use. Examples: x86, x64. Will use system architecture by default.
-    architecture: # optional
+      architecture: # optional
                       - name: Close Stale Issues
-  uses: actions/stale@v9.0.0
-  with:
+      uses: actions/stale@v9.0.0
+      with:
     # Token for the repository. Can be passed in using `{{ secrets.GITHUB_TOKEN }}`.
     repo-token: # optional, default is ${{ github.token }}
     # The message to post on the issue when tagging it. If none provided, will not mark issues stale.
@@ -251,8 +251,8 @@ jobs:
     # Only the issues or the pull requests with an assignee will be marked as stale automatically.
     include-only-assigned: # optional, default is false
                       - name: Close Stale Issues
-  uses: actions/stale@v9.0.0
-  with:
+uses: actions/stale@v9.0.0
+with:
     # Token for the repository. Can be passed in using `{{ secrets.GITHUB_TOKEN }}`.
     repo-token: # optional, default is ${{ github.token }}
     # The message to post on the issue when tagging it. If none provided, will not mark issues stale.
@@ -360,8 +360,8 @@ jobs:
     # Only the issues or the pull requests with an assignee will be marked as stale automatically.
     include-only-assigned: # optional, default is false
                       - name: Setup .NET Core SDK
-  uses: actions/setup-dotnet@v4.0.1
-  with:
+    uses: actions/setup-dotnet@v4.0.1
+    with:
     # Optional SDK version(s) to use. If not provided, will install global.json version when available. Examples: 2.2.104, 3.1, 3.1.x, 3.x, 6.0.2xx
     dotnet-version: # optional
     # Optional quality of the build. The possible values are: daily, signed, validated, preview, ga.
