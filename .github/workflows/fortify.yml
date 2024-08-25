@@ -47,14 +47,14 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v4.2.2
         with: null
-        java-version: null
-        java-version-file: null
-        distribution: null
-        java-package: null
-        architecture: null
-        jdkFile: null
+          java-version: null
+          java-version-file: null
+          distribution: null
+          java-package: null
+          architecture: null
+          jdkFile: null
         check-latest: null
-        server-id: null
+          server-id: null
         server-username: null
         server-password: null
         settings-path: null
